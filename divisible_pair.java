@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class divisible_pair {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int a[] = new int[n];
+        for(int a_i=0; a_i < n; a_i++){
+            a[a_i] = in.nextInt();
+        }
+        
+        int i = 0;
+        int j = 0;
+        int num_pairs = 0;
+        
+        for (int it=0; it < n; it++)
+        {
+            for (int jt=it+1; jt<n; jt++)
+            {
+                if ((a[it]+a[jt])%k ==0)
+                    num_pairs = num_pairs + 1;
+            }
+        }
+        System.out.print(num_pairs);
+    }
+}
